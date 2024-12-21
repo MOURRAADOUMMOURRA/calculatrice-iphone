@@ -18,6 +18,7 @@ body{
     align-items: end;
     width: 100%;
     height: 200px;
+    overflow: hidden;
     font-size: 50px;
     font-weight: 500;
     font-family: sans-serif;
@@ -37,6 +38,9 @@ button:hover{
 }
 button:active{
     translate: 2px;
+}
+audio{
+    display: none;
 }
 .number,.point{
     background-color: #3E3E3E;
