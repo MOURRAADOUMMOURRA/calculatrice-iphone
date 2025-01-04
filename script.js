@@ -101,14 +101,34 @@ sin.addEventListener("click",()=>{
     screen.innerText=result
 })
 
-function sinAproc(x){
+function sinAproc(angledegre){
+    const angleRadians = degToRadin(angledegre);
     let resultSin=0;
     let sign=1;
     for(i=1;i<12;i+=2){
-        resultSin=resultSin+(sign*(Math.pow(x,i)/fact(i)));
+        resultSin=resultSin+(sign*(Math.pow(angleRadians,i)/fact(i)));
         console.log(resultSin);
         
         sign=sign*(-1);
     }
     return resultSin;
+
+}
+function degToRadin(deg){
+    return deg*(Math.PI/180);
+}
+cos.addEventListener("click",()=>{
+    result=cosAproc(eval(screen.innerText)).toFixed(2)
+    console.log(result);
+    
+    screen.innerText=result
+})
+
+function cosAproc(angledegre){
+    const angleRadians = degToRadin(angledegre);
+    let resultcos = 1;
+    for(let i = 1; i <= 100 ; i++){
+        resultcos += Math.pow(-1, i) * Math.pow(angleRadians, 2 * i) / fact(2 * i);
+    }
+    return resultcos
 }
